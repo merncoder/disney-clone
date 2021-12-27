@@ -70,7 +70,6 @@ const CTALogoOne = styled.img`
   width: 100%;
 `;
 const SignUp = styled.a`
-  cursor: pointer;
   font-weight: bold;
   color: #f9f9f9;
   background-color: #0063e5;

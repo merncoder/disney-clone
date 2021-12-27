@@ -1,7 +1,15 @@
 import styled from "styled-components";
 import React from "react";
-
+import { auth, provider } from "../fireConfig.js";
+import { signInWithPopup } from "firebase/auth";
 export default function Header() {
+  const handleClick = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((err) => console.log("Cannot Sign In"));
+  };
   return (
     <Nav>
       <Logo>
@@ -33,7 +41,7 @@ export default function Header() {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      <Login>login</Login>
+      <Login onClick={handleClick}>login</Login>
     </Nav>
   );
 }
